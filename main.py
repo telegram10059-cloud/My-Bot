@@ -14,6 +14,12 @@ from telegram.ext import (
     CallbackContext,
 )
 
+# --- FIX for Python 3.13 (imghdr removed) ---
+import sys
+import filetype
+sys.modules['imghdr'] = filetype
+# --------------------------------------------
+
 from keep_alive import keep_alive
 
 # আপনার বট টোকেন (আপনি দিয়েছেন)
